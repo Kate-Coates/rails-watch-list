@@ -30,3 +30,22 @@ Movie.create(title: "Ocean's Eight",
 List.create(name: "Drama")
 List.create(name: "Comedy")
 List.create(name: "Action")
+
+#require "uri"
+#require "net/http"
+#require "json"
+#require "open-uri"
+
+#url = "https://tmdb.lewagon.com/movie/top_rated"
+#movie_serialized = URI.open(url).read
+#movies = JSON.parse(movie_serialized)
+
+#movies["results"].each do |movie|
+  #puts movie["original_title"]
+  #Movie.create(
+    #title: movie["title"],
+    #overview: movie["overview"],
+    #rating: movie["vote_average"],
+    #image: "#{img_url}"
+  #)
+#end

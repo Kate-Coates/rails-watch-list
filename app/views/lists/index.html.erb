@@ -1,14 +1,29 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1535016120720-40c646be5580?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW92aWV8ZW58MHx8MHx8fDA%3D);">
+  <div class="container">
+    <h1>Welcome to our movie app!</h1>
+    <p>Discover your favourite movies here...</p>
+    <!--<a class="btn btn-flat" href="#">Apply now</a>-->
+  </div>
+</div>
+
 <div class="container mt-5">
   <h1>My Lists</h1>
+  <%= link_to "Add new list", new_list_path, class: "btn btn-flat" %>
 
-  <p><%= link_to "Add new list", new_list_path %></p>
 
-  <ul>
+<div class="cards">
   <% @lists.each do |list| %>
-    <li><%= list.name %></li>
-    <p><%= link_to "view list", list_path(list) %></p>
-    <%= link_to "Delete list",list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <% end %>
-  </ul>
+  <div class="list-card">
 
+      <h2><%= list.name %></h2>
+      <div class="links">
+        <p><%= link_to "View", list_path(list), class: "btn btn-flat" %></p>
+      <p><%= link_to "Delete",list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-flat"%></p>
+      </div>
+
+        </div>
+  <% end %>
 </div>
+</div>
+<!--</div>-->
