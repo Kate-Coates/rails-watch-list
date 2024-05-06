@@ -9,6 +9,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  margin-bottom: 50px;
 
 }
 
@@ -67,13 +68,4 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
-}
-
-.bookmark-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border: 1px dotted grey;
 }

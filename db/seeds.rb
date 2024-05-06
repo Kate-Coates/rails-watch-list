@@ -7,8 +7,27 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Movie.destroy_all
+
+#Bookmark.destroy_all
+
 List.destroy_all
+Movie.destroy_all
+
+#require "json"
+#require "open-uri"
+
+#url = "https://tmdb.lewagon.com/movie/top_rated"
+#movie_serialized = URI.open(url).read
+#movies = JSON.parse(movie_serialized)
+ #movies["results"].each do |movie|
+  #puts movie["original_title"]
+  #Movie.create(
+    #title: movie["title"],
+    #overview: movie["overview"],
+    #rating: movie["vote_average"],
+    #poster_url: url + movie["poster_path"]
+  #)
+#end
 
 Movie.create(title: "Wonder Woman 1984",
             overview: "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s",
@@ -27,25 +46,7 @@ Movie.create(title: "Ocean's Eight",
             poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg",
             rating: 7.0)
 
+
 List.create(name: "Drama")
 List.create(name: "Comedy")
 List.create(name: "Action")
-
-#require "uri"
-#require "net/http"
-#require "json"
-#require "open-uri"
-
-#url = "https://tmdb.lewagon.com/movie/top_rated"
-#movie_serialized = URI.open(url).read
-#movies = JSON.parse(movie_serialized)
-
-#movies["results"].each do |movie|
-  #puts movie["original_title"]
-  #Movie.create(
-    #title: movie["title"],
-    #overview: movie["overview"],
-    #rating: movie["vote_average"],
-    #image: "#{img_url}"
-  #)
-#end
